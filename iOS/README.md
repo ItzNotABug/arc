@@ -57,14 +57,14 @@ remoteConfig.setDefaults(["betaFeatsActive": false, "cdnUrl": "https://cdn.speed
 // Realtime updates: If using an existing `Realtime` instance:
 // remoteConfig.addOnConfigUpdateListener(realtime, callback)
 subscription = remoteConfig.addOnConfigUpdateListener() { key, value in
-    logDebug("$key: $value")
-    return true;
+    logDebug("\(key): \(value)")
+    return true; // True indicates changes should be immediately persisted to disk.
 }
 
 // Fetch configurations & activate them.
 remoteConfig.fetchAndActivate((sourceType) {
     // Possible sourceType values: `cache`, `network`, `defaults`, `failure(Error)`
-    logDebug("Configurations activated from: ${source.type}");
+    logDebug("Configurations activated from: \(source.type)");
     logDebug(remoteConfig.getCurrentConfigs())
 });
 

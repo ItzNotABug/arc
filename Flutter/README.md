@@ -38,7 +38,7 @@ remoteConfig.setDefaults({"betaFeatsActive": false, "cdnUrl": "https://cdn.speed
 // remoteConfig.addOnConfigUpdateListener(realtime, callback)
 RealtimeSubscription subscription = remoteConfig.addOnConfigUpdateListener(callback: (key, value) {
     logDebug("$key: $value");
-    return true;
+    return true; // True indicates changes should be immediately persisted to disk.
 });
 
 // Fetch configurations & activate them.
