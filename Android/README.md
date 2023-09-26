@@ -35,7 +35,8 @@ remoteConfig.setCacheLimit(3)
 // Provide default configurations, ideal for initial runs or offline scenarios without cache.
 remoteConfig.setDefaults(mapOf("betaFeatsActive" to false, "cdnUrl" to "https://cdn.speedy.app/"))
 
-// Realtime updates: If using an existing `Realtime` instance:
+// Realtime updates: 
+// If already using an instance of `Realtime` then do:
 // remoteConfig.addOnConfigUpdateListener(realtime, callback)
 val subscription = remoteConfig.addOnConfigUpdateListener(callback = object : ConfigUpdateListener {
     override fun onConfigUpdate(updatedConfig: Pair<String, Any>): Boolean {
@@ -86,7 +87,8 @@ defaults.put("betaFeatsActive", false);
 defaults.put("cdnUrl", "https://cdn.speedy.app/");
 remoteConfig.setDefaults(defaults);
 
-// Realtime updates: If using an existing `Realtime` instance:
+// Realtime updates:
+// If already using an instance of `Realtime` then do:
 // remoteConfig.addOnConfigUpdateListener(realtime, callback)
 RealtimeSubscription subscription = remoteConfig.addOnConfigUpdateListener(updatedConfig -> {
     logDebug(updatedConfig.getFirst() + ": " + updatedConfig.getSecond());

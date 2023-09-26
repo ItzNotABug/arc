@@ -34,7 +34,8 @@ remoteConfig.setCacheLimit(3);
 // Provide default configurations. Useful for initial runs or offline scenarios without any cache.
 remoteConfig.setDefaults({"betaFeatsActive": false, "cdnUrl": "https://cdn.speedy.app/"});
 
-// Realtime updates: If using an existing `Realtime` instance:
+// Realtime updates
+// If using an existing `Realtime` instance then do:
 // remoteConfig.addOnConfigUpdateListener(realtime, callback)
 RealtimeSubscription subscription = remoteConfig.addOnConfigUpdateListener(callback: (key, value) {
     logDebug("$key: $value");
